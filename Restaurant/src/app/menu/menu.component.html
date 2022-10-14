@@ -1,0 +1,14 @@
+<div class="selfbody p-5">
+  <div class="d-flex justify-content-evenly flex-wrap">
+    <div *ngFor="let product of products; index as productId" class="card mb-5" style="width: 18rem;">
+        <img src="{{product.image}}" class="card-img-top" alt="pizza image">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <hr>
+          <p class="card-text">{{product.descriptionSmall}}</p>
+          <a class="btn btn-primary mx-2" routerLink="products/{{productId}}">Details</a>
+          <a class="btn btn-success" (click)="addtoCart(product)">Order</a>
+        </div>
+    </div>
+  </div>
+</div>
