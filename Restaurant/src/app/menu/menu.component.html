@@ -4,11 +4,17 @@
         <img src="{{product.image}}" class="card-img-top" alt="pizza image">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
+          <p>{{product.price | currency}}</p>
           <hr>
           <p class="card-text">{{product.descriptionSmall}}</p>
-          <a class="btn btn-primary mx-2" routerLink="products/{{productId}}">Details</a>
-          <a class="btn btn-success" (click)="addtoCart(product)">Order</a>
+            <div *ngIf="product.availability == true; else notAvailable">
+              <a class="btn btn-primary mx-2" routerLink="products/{{productId}}">Details</a>
+              <a class="btn btn-success" (click)="addtoCart(product)">Order</a>
+            </div>
+            <ng-template #notAvailable>
+              <p class="text-white bg-danger text-center">This is not available</p>
+            </ng-template>
+          </div>
         </div>
     </div>
   </div>
-</div>

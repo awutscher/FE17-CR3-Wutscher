@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { products } from "../products"
 import { Iproducts } from "../Iproducts"
-import { CartService } from '../cart.service';//comment out
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -19,13 +19,11 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService //comment out
+    private cartService: CartService 
   ) { }
 
-  addtoCart(product:Iproducts) {//comment out
-    window.alert('Your product has been added to the cart!');
+  addtoCart(product:Iproducts) {
     this.cartService.addtoCart(product);
-    console.log(product)
   }
   
   ngOnInit(): void {

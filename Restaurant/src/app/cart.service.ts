@@ -11,6 +11,8 @@ export class CartService {
 
   addtoCart(product:Iproducts){
     this.items.push(product);
+    product.amount++;
+    console.log(product)
   }
 
   getItems(){

@@ -6,6 +6,6 @@
         <h2>{{ product.name }}</h2>
         <h4>{{ product.price | currency }}</h4>
         <p>{{ product.details }}</p>
-        <button class="btn btn-success">BUY</button>
+        <button class="btn btn-success" (click)="addtoCart(product)">BUY</button>
     </div>
 </div>
