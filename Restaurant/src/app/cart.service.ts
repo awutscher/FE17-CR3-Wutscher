@@ -9,11 +9,22 @@ export class CartService {
 
   constructor() { }
 
-  addtoCart(product:Iproducts){
+/*   addtoCart(product:Iproducts){
     this.items.push(product);
     product.amount++;
     console.log(product)
+  } */
+
+//test 
+addtoCart(product:Iproducts){
+  if(this.items.includes(product)){
+    product.amount++;
   }
+  else{
+    this.items.push(product)
+    product.amount++;
+  }
+}
 
   getItems(){
     return this.items;

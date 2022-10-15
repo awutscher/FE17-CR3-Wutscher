@@ -13,21 +13,44 @@ import { products } from '../products';
 })
 
 export class OrderComponent implements OnInit {
-  items: Iproducts[] = [];
-  constructor(private cartService: CartService
-    ) { }
+
+items: Iproducts[] = [];
+constructor(private cartService: CartService
+  ) { }
 
 
-  get totalSum(){
-    return this.items.reduce((prev , next) => prev + next.price,0)
+get totalSum(){
+  let totalSum = this.items.reduce((prev , next) => prev + next.price*next.amount,0)
+  return totalSum + totalSum*.10;
+}
+
+get serviceFee(){
+  return this.totalSum*0.10;
+}
+
+discount = 0;
+
+get discountCalc(){
+  if(this.totalSum > 40){
+    this.discount = this.totalSum * 0.15;
+    return this.discount;
   }
-
-  get totalAmountItems(){//BUGGY AS FUCK
-    return this.items.reduce((prev , next) => prev + next.amount,0)
+  else{
+    return this.discount = 0;
   }
+};
 
-  ngOnInit(): void {
-    this.items = this.cartService.getItems();
-    console.log(this.items)
-  }
+get endPrice(){
+  return this.totalSum - this.discount;
+}
+
+
+get totalAmountItems(){
+  return this.items.reduce((prev , next) => prev + next.amount,0)
+}
+
+ngOnInit(): void {
+  this.items = this.cartService.getItems();
+  console.log(this.items)
+}
 }

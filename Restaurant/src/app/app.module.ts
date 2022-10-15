@@ -10,6 +10,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { DetailsComponent } from './details/details.component';
 import { OrderComponent } from './order/order.component';
 import { MenuComponent } from './menu/menu.component';
+/* import { OrderformComponent } from './orderform/orderform.component'; */
+
 
 @NgModule({
   declarations: [
@@ -20,11 +22,12 @@ import { MenuComponent } from './menu/menu.component';
     AboutusComponent,
     DetailsComponent,
     OrderComponent,
-    MenuComponent
+    MenuComponent,
+    /* OrderformComponent */
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
