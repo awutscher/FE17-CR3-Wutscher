@@ -10,7 +10,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { DetailsComponent } from './details/details.component';
 import { OrderComponent } from './order/order.component';
 import { MenuComponent } from './menu/menu.component';
-/* import { OrderformComponent } from './orderform/orderform.component'; */
+import { OrderformComponent } from './orderform/orderform.component';
+
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,11 +25,13 @@ import { MenuComponent } from './menu/menu.component';
     DetailsComponent,
     OrderComponent,
     MenuComponent,
-    /* OrderformComponent */
+    OrderformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

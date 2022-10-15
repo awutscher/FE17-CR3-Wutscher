@@ -1,25 +1,29 @@
-<!-- <div class="container">
+<div class="container text-center">
     <form [formGroup]="orderinfo" (ngSubmit)="onSubmit()">
-        <label>
+      <div>
+        <label class="m-3">
             Name:
           <input type="text" formControlName="name">
         </label>
-      
-        <label>
+      </div>
+      <div>
+        <label class="m-3">
           Email:
-          <input type="text" formControlName="email">
+          <input type="text" email formControlName="email">
         </label>
-      
-        <label>
+      </div>
+      <div>
+        <label class="m-3">
           Phone:
-          <input type="text" formControlName="phone">
+          <input type="number" formControlName="phone">
         </label>
-       
-        <label>
+      </div>
+      <div>
+        <label class="m-3">
           Adress:
           <input type="text" formControlName="adress">
         </label>
-      
-        <input type="submit" class="btn btn-primary" value="Submit">
-       </form>
-</div>> -->
+      </div>
+        <input type="submit" class="btn btn-success m-3" value="Order">
+    </form>
+</div>

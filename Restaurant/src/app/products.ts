@@ -12,7 +12,7 @@ export const products =[
         name: "Salami",
         image: "../assets/images/pizza-salami.jpg",
         price: 11.50,
-        descriptionSmall: "cant do anything wrong with classic salami",
+        descriptionSmall: "nothing wrong with classic salami",
         details: "Dough, mozzarella cheese, tomato, salami",
         availability: true,
         amount: 0

@@ -1,6 +1,6 @@
-/* import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-orderform',
@@ -11,20 +11,17 @@ export class OrderformComponent implements OnInit {
 
 
 orderinfo = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    adress: new FormControl(''),
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    adress: new FormControl('', [Validators.required, Validators.minLength(7)]),
   });
 
   constructor() { }
 
   ngOnInit(): void {}
     onSubmit(){
-      // to take the values from the form you can select the property that have the formGroup and then just add .value
         var a = this.orderinfo.value;
-        console.log(a)
-      }
+        alert(JSON.stringify(a))
+    }
   }
-
- */
